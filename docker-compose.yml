@@ -1,0 +1,73 @@
+version: "2.3"
+
+services:
+
+### PHP-FPM Container #######################################
+
+  php-fpm:
+    build:
+      dockerfile: Dockerfile-php
+    container_name: php-fpm
+    hostname: php-fpm
+    image: mikechernev/php7-fpm-laravel:latest
+    ports:
+      - "9000:9000"
+    restart: on-failure:5
+    volumes:
+      - ./:/var/www/html
+
+### NGINX Server Container ##################################
+
+  nginx:
+    build:
+      dockerfile: Dockerfile-nginx
+    depends_on:
+      - php-fpm
+      - mysql
+    healthcheck:
+      test:
+        ["CMD", "wget", "-O", "-", "http://127.0.0.1/status"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    image: nginx:mainline-alpine
+    links:
+      - php-fpm
+      - redis
+    ports:
+      - "80:80"
+    restart: on-failure:5
+
+### MySQL Container #########################################
+
+  mysql:
+    environment:
+      - MYSQL_ROOT_PASSWORD=JVTYHR^yfrhd2w7
+      - MYSQL_DATABASE=homestead
+      - MYSQL_USER=homestead
+      - MYSQL_PASSWORD=JFJWRTP%375ahjwsg
+    healthcheck:
+      test:
+        ["CMD", "/etc/init.d/mysql", "status"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    image: mysql:latest
+    restart: on-failure:5
+    volumes:
+      - ./data:/var/lib/mysql
+
+### REDIS Container #########################################
+
+  redis:
+    image: redis:alpine
+    healthcheck:
+      test:
+        ["CMD", "redis-cli", "-h", "127.0.0.1", "info"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: on-failure:5

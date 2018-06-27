@@ -14,3 +14,4 @@ yarn-error.log
 /.buildpath
 /.project
 /.settings/
+/src/vendor/
