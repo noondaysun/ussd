@@ -6,10 +6,10 @@ services:
 
   php-fpm:
     build:
+      context: ./
       dockerfile: Dockerfile-php
     container_name: php-fpm
     hostname: php-fpm
-    image: mikechernev/php7-fpm-laravel:latest
     ports:
       - "9000:9000"
     restart: on-failure:5
@@ -20,6 +20,7 @@ services:
 
   nginx:
     build:
+      context: ./
       dockerfile: Dockerfile-nginx
     depends_on:
       - php-fpm
@@ -31,7 +32,6 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
-    image: nginx:mainline-alpine
     links:
       - php-fpm
       - redis
