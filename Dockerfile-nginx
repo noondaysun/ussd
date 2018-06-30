@@ -1,6 +1,0 @@
-FROM nginx:mainline-alpine
-MAINTAINER Feighen Oosterbroek <feighen@gmail.com>
-
-RUN apk --update add wget
-
-COPY docker-config/nginx/nginx.conf /etc/nginx/nginx.conf

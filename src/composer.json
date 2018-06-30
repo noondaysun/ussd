@@ -1,7 +1,7 @@
 {
-    "name": "noondaysun/ussd",
-    "description": "Laravel based ADR application for ussd based signp including name, and surname.",
-    "keywords": ["framework", "laravel", "ussd"],
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
