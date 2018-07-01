@@ -1,0 +1,38 @@
+.bg-purple {
+    background-color: theme-color("primary") !important;
+}
+
+.btn {
+    border-width: 2px;
+
+    &-link,
+    &-link:hover {
+        box-shadow: none !important;
+    }
+}
+
+.mt-6 {
+    margin-top: 6rem;
+}
+
+.card-header {
+    font-size: 1.2rem;
+}
+
+.dropdown-toggle::after {
+    margin-left: 0.5em;
+    vertical-align: 0.12em;
+}
+
+.nav-item {
+    .dropdown-menu {
+        border-radius: 0 0 0.25rem 0.25rem;
+        margin: 0.525rem 0 0;
+        border-top-width: 0;
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: rgba(0, 0, 0, 0.03);;
+        }
+    }
+}
