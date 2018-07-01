@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    /**
+     * Get parent Person record
+     * @return Person
+     */
+    public function person(): Person
+    {
+        return $this->belongsTo('App\Person');
+    }
 }
