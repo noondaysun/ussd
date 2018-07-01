@@ -13,7 +13,7 @@ class ContactDetailsRepository extends Repository implements Contract
      *
      * @return \App\Domain\Entities\ContactDetails
      */
-    public function entity(): ContactDetails
+    public function entity()
     {
         return ContactDetails::class;
     }
@@ -24,7 +24,7 @@ class ContactDetailsRepository extends Repository implements Contract
      * @param  array
      * @return \App\Domain\Entities\ContactDetails
      */
-    public function create(array $properties): ContactDetails
+    public function create(array $properties)
     {
         return $this->entity->create($properties);
     }

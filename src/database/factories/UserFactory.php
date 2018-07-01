@@ -1,5 +1,6 @@
 <?php
 
+use App\Domain\Entities\User;
 use Faker\Generator as Faker;
 
 /*
@@ -13,7 +14,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
     return [
         'person_id' => $faker->numberBetween(1, 100),
         'email' => $faker->unique()->safeEmail,

@@ -1,6 +1,6 @@
 <?php
 
-use App\ContactDetails;
+use App\Domain\Entities\ContactDetails;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;

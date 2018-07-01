@@ -1,6 +1,6 @@
 <?php
 
-use App\Person;
+use App\Domain\Entities\Person;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;

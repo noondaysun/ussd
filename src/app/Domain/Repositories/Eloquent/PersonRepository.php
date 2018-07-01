@@ -13,7 +13,7 @@ class PersonRepository extends Repository implements Contract
      *
      * @return \App\Domain\Entities\Person
      */
-    public function entity(): Person
+    public function entity()
     {
         return Person::class;
     }
@@ -24,7 +24,7 @@ class PersonRepository extends Repository implements Contract
      * @param  array
      * @return \App\Domain\Entities\Person
      */
-    public function create(array $properties): Person
+    public function create(array $properties)
     {
         return $this->entity->create($properties);
     }

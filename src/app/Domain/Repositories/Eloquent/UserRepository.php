@@ -13,7 +13,7 @@ class UserRepository extends Repository implements Contract
      *
      * @return \App\Domain\Entities\User
      */
-    public function entity(): User
+    public function entity()
     {
         return User::class;
     }
@@ -24,7 +24,7 @@ class UserRepository extends Repository implements Contract
      * @param  array
      * @return \App\Domain\Entities\User
      */
-    public function create(array $properties): User
+    public function create(array $properties)
     {
         $properties['password'] = bcrypt($properties['password']);
 

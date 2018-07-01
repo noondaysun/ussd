@@ -1,8 +1,9 @@
 <?php
 
+use App\Domain\Entities\Person;
 use Faker\Generator as Faker;
 
-$factory->define(App\Person::class, function (Faker $faker) {
+$factory->define(Person::class, function (Faker $faker) {
     return [
         'title' => $faker->randomElement([
             'Mr', 'Mrs', 'Ms', 'Mx', 'Dr', 'Prof', 'Sir', 'Madam', 'Dame'

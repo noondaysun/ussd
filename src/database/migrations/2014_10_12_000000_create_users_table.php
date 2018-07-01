@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
+            $table->boolean('live')->default(false);
             $table->index('person_id');
             $table->foreign('person_id')->references('id')->on('people');
             $table->timestamps();

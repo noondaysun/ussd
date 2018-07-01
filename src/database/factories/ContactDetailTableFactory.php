@@ -1,8 +1,9 @@
 <?php
 
+use App\Domain\Entities\ContactDetails;
 use Faker\Generator as Faker;
 
-$factory->define(App\ContactDetails::class, function (Faker $faker) {
+$factory->define(ContactDetails::class, function (Faker $faker) {
     return [
         'person_id' => $faker->numberBetween(1, 100),
         'mobile_telephone' => $faker->phoneNumber,
