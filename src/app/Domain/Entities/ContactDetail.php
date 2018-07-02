@@ -39,6 +39,6 @@ class ContactDetail extends Model
      */
     public function toArray(): array
     {
-        return array_merge(parent::toArray(), ['person' => $this->person()]);
+        return array_merge(parent::toArray(), ['person' => $this->person]);
     }
 }

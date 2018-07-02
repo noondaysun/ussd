@@ -23,7 +23,7 @@ class Person extends Model
      */
     public function contactDetails()
     {
-        return $this->hasMany('ContactDetails');
+        return $this->hasMany(ContactDetail::class);
     }
     
     /**
@@ -33,7 +33,7 @@ class Person extends Model
      */
     public function users()
     {
-        return $this->hasMany('User');
+        return $this->hasMany(User::class);
     }
     
     /**
@@ -45,8 +45,8 @@ class Person extends Model
     {
         return array_merge(
             parent::toArray(),
-            ['contact_details' => $this->contactDetails()],
-            ['users' => $this->users()]
+            ['contact_details' => $this->contactDetails],
+            ['users' => $this->users]
         );
     }
 }

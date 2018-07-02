@@ -2,27 +2,27 @@
 
 namespace App\Domain\Repositories\Eloquent;
 
-use App\Domain\Entities\ContactDetails;
+use App\Domain\Entities\ContactDetail;
 use Laravail\Adr\Core\Repository;
-use App\Domain\Repositories\Contracts\ContactDetailsRepository as Contract;
+use App\Domain\Repositories\Contracts\ContactDetailRepository as Contract;
 
-class ContactDetailsRepository extends Repository implements Contract
+class ContactDetailRepository extends Repository implements Contract
 {
     /**
      * Set the repository entity.
      *
-     * @return \App\Domain\Entities\ContactDetails
+     * @return ContactDetail
      */
     public function entity()
     {
-        return ContactDetails::class;
+        return ContactDetail::class;
     }
     
     /**
      * Persist the user in the db.
      *
      * @param  array
-     * @return \App\Domain\Entities\ContactDetails
+     * @return ContactDetail
      */
     public function create(array $properties)
     {

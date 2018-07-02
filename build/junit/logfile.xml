@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="2.614123">
-    <testsuite name="Feature" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="2.478962">
-      <testsuite name="Tests\Feature\ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Feature/ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="2.478962">
-        <testcase name="testBasicTest" class="Tests\Feature\ExampleTest" classname="Tests.Feature.ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Feature/ExampleTest.php" line="15" assertions="1" time="2.478962"/>
+  <testsuite name="" tests="9" assertions="9" errors="0" failures="0" skipped="0" time="2.875205">
+    <testsuite name="Feature" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.252332">
+      <testsuite name="Tests\Feature\ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Feature/ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.252332">
+        <testcase name="testBasicTest" class="Tests\Feature\ExampleTest" classname="Tests.Feature.ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Feature/ExampleTest.php" line="15" assertions="1" time="0.252332"/>
       </testsuite>
     </testsuite>
-    <testsuite name="Unit" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.135161">
-      <testsuite name="Tests\Unit\ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Unit/ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.135161">
-        <testcase name="testBasicTest" class="Tests\Unit\ExampleTest" classname="Tests.Unit.ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Unit/ExampleTest.php" line="15" assertions="1" time="0.135161"/>
+    <testsuite name="Unit" tests="8" assertions="8" errors="0" failures="0" skipped="0" time="2.622873">
+      <testsuite name="Tests\UnitApp\Domain\Entities\ContactDetailsTest" file="/home/feighen/workspace/ussd/src/tests/Unit/App/Domain/Entities/ContactDetailTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.806677">
+        <testcase name="testPerson" class="Tests\UnitApp\Domain\Entities\ContactDetailsTest" classname="Tests.UnitApp.Domain.Entities.ContactDetailsTest" file="/home/feighen/workspace/ussd/src/tests/Unit/App/Domain/Entities/ContactDetailTest.php" line="36" assertions="1" time="0.437147"/>
+        <testcase name="testToArray" class="Tests\UnitApp\Domain\Entities\ContactDetailsTest" classname="Tests.UnitApp.Domain.Entities.ContactDetailsTest" file="/home/feighen/workspace/ussd/src/tests/Unit/App/Domain/Entities/ContactDetailTest.php" line="45" assertions="1" time="0.369530"/>
+      </testsuite>
+      <testsuite name="Tests\UnitApp\Domain\Entities\PersonTest" file="/home/feighen/workspace/ussd/src/tests/Unit/App/Domain/Entities/PersonTest.php" tests="3" assertions="3" errors="0" failures="0" skipped="0" time="1.070133">
+        <testcase name="testToArray" class="Tests\UnitApp\Domain\Entities\PersonTest" classname="Tests.UnitApp.Domain.Entities.PersonTest" file="/home/feighen/workspace/ussd/src/tests/Unit/App/Domain/Entities/PersonTest.php" line="37" assertions="1" time="0.378985"/>
+        <testcase name="testContactDetails" class="Tests\UnitApp\Domain\Entities\PersonTest" classname="Tests.UnitApp.Domain.Entities.PersonTest" file="/home/feighen/workspace/ussd/src/tests/Unit/App/Domain/Entities/PersonTest.php" line="46" assertions="1" time="0.340715"/>
+        <testcase name="testUser" class="Tests\UnitApp\Domain\Entities\PersonTest" classname="Tests.UnitApp.Domain.Entities.PersonTest" file="/home/feighen/workspace/ussd/src/tests/Unit/App/Domain/Entities/PersonTest.php" line="55" assertions="1" time="0.350433"/>
+      </testsuite>
+      <testsuite name="Tests\UnitApp\Domain\Entities\UserTest" file="/home/feighen/workspace/ussd/src/tests/Unit/App/Domain/Entities/UserTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.643072">
+        <testcase name="testPerson" class="Tests\UnitApp\Domain\Entities\UserTest" classname="Tests.UnitApp.Domain.Entities.UserTest" file="/home/feighen/workspace/ussd/src/tests/Unit/App/Domain/Entities/UserTest.php" line="36" assertions="1" time="0.327670"/>
+        <testcase name="testToArray" class="Tests\UnitApp\Domain\Entities\UserTest" classname="Tests.UnitApp.Domain.Entities.UserTest" file="/home/feighen/workspace/ussd/src/tests/Unit/App/Domain/Entities/UserTest.php" line="45" assertions="1" time="0.315402"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Unit/ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.102991">
+        <testcase name="testBasicTest" class="Tests\Unit\ExampleTest" classname="Tests.Unit.ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Unit/ExampleTest.php" line="15" assertions="1" time="0.102991"/>
       </testsuite>
     </testsuite>
   </testsuite>

@@ -15,7 +15,6 @@ class CreateContactDetailsTable extends Migration
     public function up()
     {
         Schema::create('contact_details', function (Blueprint $table) {
-            DB::statement('SET FOREIGN_KEY_CHECKS=0');
             $table->engine = 'InnoDB';
             
             $table->increments('id');
@@ -28,7 +27,6 @@ class CreateContactDetailsTable extends Migration
             $table->index('person_id');
             $table->foreign('person_id')->references('id')->on('people');
             $table->timestamps();
-            DB::statement('SET FOREIGN_KEY_CHECKS=1');
         });
     }
 
@@ -39,8 +37,6 @@ class CreateContactDetailsTable extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         Schema::dropIfExists('contact_details');
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }
