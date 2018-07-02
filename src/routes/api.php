@@ -14,6 +14,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/contact_details', function() {
-    (new App\ContactDetails\Actions\ListContactDetailsAction)->__invoke();
+Route::group(['namespace' => 'ContactDetail'], function() {
+    Route::get('contact_details', ContactDetailShowAction::class)->name('contact.details');
 });

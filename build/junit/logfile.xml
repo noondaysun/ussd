@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="2.614123">
+    <testsuite name="Feature" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="2.478962">
+      <testsuite name="Tests\Feature\ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Feature/ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="2.478962">
+        <testcase name="testBasicTest" class="Tests\Feature\ExampleTest" classname="Tests.Feature.ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Feature/ExampleTest.php" line="15" assertions="1" time="2.478962"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Unit" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.135161">
+      <testsuite name="Tests\Unit\ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Unit/ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.135161">
+        <testcase name="testBasicTest" class="Tests\Unit\ExampleTest" classname="Tests.Unit.ExampleTest" file="/home/feighen/workspace/ussd/src/tests/Unit/ExampleTest.php" line="15" assertions="1" time="0.135161"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

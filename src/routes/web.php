@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,17 @@
 */
 
 Route::get('/', IndexAction::class)->name('homepage');
+
+Route::group(['namespace' => 'ContactDetail'], function() {
+    $this->get('contact_details', ContactDetailListAction::class)
+         ->name('contact.details');
+    $this->post('contact_details', ContactDetailStoreAction::class)
+         ->name('contact.detail.create');
+    $this->get('contact_details/{contactDetailId}', ContactDetailShowAction::class)
+         ->name('contact.detail');
+    $this->patch('contact_details/{contactDetailId}', ContactDetailAmendAction::class)
+         ->name('contact.detail.update');
+});
 
 Route::group(['namespace' => 'Auth'], function() {
 

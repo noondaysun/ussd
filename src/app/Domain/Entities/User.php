@@ -37,4 +37,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo('Person');
     }
+    
+    /**
+     * Return an array with added person record
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return array_merge(parent::toArray(), ['person' => $this->person()]);
+    }
 }

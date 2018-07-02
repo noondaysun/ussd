@@ -20,7 +20,7 @@ class ContactDetail extends Model
     /**
      * @var string
      */
-    protected $table = 'contact_details'
+    protected $table = 'contact_details';
     
     /**
      * Get the parent Person record
@@ -29,6 +29,16 @@ class ContactDetail extends Model
      */
     public function person()
     {
-        return $this->belongsTo('Person');
+        return $this->belongsTo(Person::class);
+    }
+    
+    /**
+     * Return an array with added person record
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return array_merge(parent::toArray(), ['person' => $this->person()]);
     }
 }

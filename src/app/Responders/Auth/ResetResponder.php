@@ -12,7 +12,7 @@ class ResetResponder extends Responder
      *
      * @return \Illuminate\Http\Response
      */
-    public function send(Request $request, $token = null)
+    public function send(Request $request = null, $token = null)
     {
         return $this->view->make('auth.passwords.reset')->with([
             'token' => $token,
