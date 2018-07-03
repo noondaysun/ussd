@@ -35,18 +35,4 @@ class Person extends Model
     {
         return $this->hasMany(User::class);
     }
-    
-    /**
-     * Return an array with added child record(s)
-     *
-     * @return array
-     */
-    public function toArray(): array
-    {
-        return array_merge(
-            parent::toArray(),
-            ['contact_details' => $this->contactDetails],
-            ['users' => $this->users]
-        );
-    }
 }

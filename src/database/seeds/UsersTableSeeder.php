@@ -15,10 +15,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         if (App::environment('local')) {
-            DB::statement('SET FOREIGN_KEY_CHECKS=0');
             DB::table('users')->truncate();
             factory(User::class, 100)->create();
-            DB::statement('SET FOREIGN_KEY_CHECKS=0');
         }
     }
 }

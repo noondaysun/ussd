@@ -36,15 +36,8 @@ class UserTest extends TestCase
     public function testPerson()
     {
         $this->assertInstanceOf(BelongsTo::class, $this->user->person());
-    }
-    
-    /**
-     * @test
-     * @return void
-     */
-    public function testToArray()
-    {
-        $this->assertInternalType('array', $this->user->toArray());
+        $user = $this->user->find(1);
+        dd($user->toArray());
     }
     
     /**

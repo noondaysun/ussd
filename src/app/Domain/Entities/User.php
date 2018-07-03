@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'person_id', 'email', 'password',
+        'person_id', 'email', 'password', 'live',
     ];
 
     /**
@@ -36,15 +36,5 @@ class User extends Authenticatable
     public function person()
     {
         return $this->belongsTo(Person::class);
-    }
-    
-    /**
-     * Return an array with added person record
-     *
-     * @return array
-     */
-    public function toArray(): array
-    {
-        return array_merge(parent::toArray(), ['person' => $this->person()]);
     }
 }

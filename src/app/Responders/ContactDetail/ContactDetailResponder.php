@@ -15,10 +15,11 @@ class ContactDetailResponder
      * @param string $viewName - which view do we render
      * @return object
      */
-    public function send($contactDetail, string $viewName = null)
+    public function send($contactDetail)
     {
-        return request()->wantsJson() ?
+        /*return request()->wantsJson() ?
             response()->json($contactDetail->toArray(), Response::HTTP_OK) :
-            $this->view->make('contact_details.' . $viewName);
+            $this->view->make('contact_details.' . $viewName);*/
+        return response()->json($contactDetail->toArray(), Response::HTTP_OK);
     }
 }
