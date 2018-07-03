@@ -1,1 +1,5 @@
 /coverage/
+/logs/
+/code-browser/
+/junit/
+/pdepend/
