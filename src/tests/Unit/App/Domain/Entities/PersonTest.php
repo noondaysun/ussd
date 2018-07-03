@@ -34,6 +34,15 @@ class PersonTest extends TestCase
      * @test
      * @return void
      */
+    public function testToArray()
+    {
+        $this->assertInternalType('array', $this->person->toArray());
+    }
+    
+    /**
+     * @test
+     * @return void
+     */
     public function testContactDetails()
     {
         $this->assertInstanceOf(HasMany::class, $this->person->contactDetails());

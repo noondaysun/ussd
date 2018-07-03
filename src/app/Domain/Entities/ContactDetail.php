@@ -31,4 +31,14 @@ class ContactDetail extends Model
     {
         return $this->belongsTo(Person::class);
     }
+    
+    /**
+     * Return an array with added person record
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return array_merge(parent::toArray(), ['person' => $this->person]);
+    }
 }

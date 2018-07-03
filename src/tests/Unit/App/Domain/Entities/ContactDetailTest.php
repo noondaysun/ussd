@@ -39,6 +39,15 @@ class ContactDetailsTest extends TestCase
     }
     
     /**
+     * @test
+     * @return void
+     */
+    public function testToArray()
+    {
+        $this->assertInternalType('array', $this->contactDetails->toArray());
+    }
+    
+    /**
      * Create the required data in sqlite
      *
      * @return void

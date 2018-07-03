@@ -34,7 +34,7 @@ class ContactDetailShowAction extends Action
     public function __invoke()
     {
         return $this->responder->send(
-            (new ContactDetail())->find(Route::input('contactDetailId'))
+            (new ContactDetail())->findOrFail(Route::input('contactDetailId'), 'show')
         );
     }
 }

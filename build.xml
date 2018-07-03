@@ -5,11 +5,13 @@
 	<property name="threads" value="4"/>
 	<target name="clean" description="Clean up and create artifact directories">
 		<delete dir="${basedir}/build/api" />
+		<delete dir="${basedir}/build/code-browser" />
 		<delete dir="${basedir}/build/coverage" />
 		<delete dir="${basedir}/build/logs" />
 		<delete dir="${basedir}/build/pdepend" />
 
 		<mkdir dir="${basedir}/build/api" />
+		<mkdir dir="${basedir}/build/code-browser" />
 		<mkdir dir="${basedir}/build/coverage" />
 		<mkdir dir="${basedir}/build/logs" />
 		<mkdir dir="${basedir}/build/pdepend" />
@@ -49,25 +51,29 @@
 		</if>
 	</target>
 	<target name="pdepend" description="Generate jdepend.xml and software metrics charts using PHP_Depend">
-		<exec logoutput="true" command="${source}/vendor/bin/pdepend --jdepend-xml=${basedir}/build/logs/jdepend.xml --jdepend-chart=${basedir}/build/pdepend/dependencies.svg --overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg --ignore=${source}/vendor ${source}" />
+		<exec logoutput="true" command="${source}/vendor/bin/pdepend --jdepend-xml=${basedir}/build/logs/jdepend.xml --jdepend-chart=${basedir}/build/pdepend/dependencies.svg --overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg ${source}" />
 	</target>
 
 	<target name="phpmd" description="Generate pmd.xml using PHPMD">
-		<exec logoutput="true" spawn="true" command="${source}/vendor/bin/phpmd ${source} xml codesize,design,naming,unusedcode --reportfile ${basedir}/build/logs/pmd.xml --exclude=*vendor*" />
+		<exec logoutput="true" spawn="true" command="${source}/vendor/bin/phpmd ${source} xml codesize,design,naming,unusedcode --reportfile ${basedir}/build/logs/pmd.xml" />
 	</target>
 
 	<target name="phpcpd" description="Generate pmd-cpd.xml using PHPCPD">
-		<exec logoutput="true" command="${source}/vendor/bin/phpcpd --log-pmd ${basedir}/build/logs/pmd-cpd.xml --regexps-exclude=*vendor* ${source}" />
+		<exec logoutput="true" command="${source}/vendor/bin/phpcpd --log-pmd ${basedir}/build/logs/pmd-cpd.xml ${source}" />
 	</target>
 
 	<target name="phploc" description="Generate phploc.csv">
-		<exec logoutput="true" command="${source}/vendor/bin/phploc --log-csv ${basedir}/build/logs/phploc.csv --exclude=${source}/vendor ${source}" />
+		<exec logoutput="true" command="${source}/vendor/bin/phploc --log-csv ${basedir}/build/logs/phploc.csv ${source}" />
 	</target>
 
 	<target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
-		<exec logoutput="true" command="${source}/vendor/bin/phpcs --report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=PSR2 --ignore=*vendor* ${source}" />
+		<exec logoutput="true" command="${source}/vendor/bin/phpcs --report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=PEAR --ignore=${source}/node_modules,${source}/vendor ${source}" />
 	</target>
 
-	<target name="build" depends="clean,try_ParallelTasks,phpunit" />
+	<target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
+		<exec logoutput="true" command="${source}/vendor/bin/phpcb --log ${basedir}/build/logs --source ${source} --output ${basedir}/build/code-browser" />
+	</target>
+
+	<target name="build" depends="clean,try_ParallelTasks,phpunit,phpcb" />
 
 </project>
