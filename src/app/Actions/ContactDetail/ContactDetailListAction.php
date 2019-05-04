@@ -32,6 +32,6 @@ class ContactDetailListAction extends Action
      */
     public function __invoke()
     {
-        return $this->responder->send((new ContactDetail())->all());
+        return $this->responder->send((new ContactDetail())->all(), 'list');
     }
 }
